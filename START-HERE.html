@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Super Planner Skill — Start Here</title>
+<style>
+  :root{--bg:#07070c;--panel:#11111c;--panel2:#15151f;--border:#222232;--text:#cdcdd9;--muted:#7e7e92;
+    --cyan:#00f0ff;--magenta:#ff39e6;--green:#00ffa3;--yellow:#ffd23d;--violet:#9d7bff}
+  *{box-sizing:border-box}html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6;background-image:radial-gradient(60vw 60vw at 100% -10%,rgba(0,240,255,.12),transparent 60%),radial-gradient(50vw 50vw at -10% 110%,rgba(255,57,230,.08),transparent 60%);background-attachment:fixed}
+  .wrap{max-width:820px;margin:0 auto;padding:clamp(20px,4vw,48px)}
+  code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;background:#0c0c14;border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--green)}
+  .kicker{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:var(--cyan);margin:0 0 10px}
+  h1{font-size:clamp(26px,5vw,44px);line-height:1.08;margin:0 0 10px;font-weight:800;
+    background:linear-gradient(100deg,#fff,var(--cyan) 45%,var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);font-size:clamp(15px,2.3vw,17px);margin:0 0 8px}
+  .built{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin:0 0 4px}
+  h2{font-size:clamp(18px,3vw,24px);margin:34px 0 6px;font-weight:700;display:flex;gap:12px;align-items:baseline}
+  h2 .num{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:.72em}
+  p{margin:8px 0}
+  .go{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(100deg,var(--cyan),var(--violet));color:#06060c;font-weight:800;text-decoration:none;padding:14px 22px;border-radius:11px;margin:10px 0;font-size:16px}
+  .note{border:1px dashed #33334a;border-radius:12px;padding:13px 16px;margin:14px 0;font-size:14px;background:linear-gradient(180deg,rgba(0,240,255,.05),transparent)}
+  .note b{color:var(--cyan)}
+  .warn{border:1px solid rgba(255,210,61,.4);border-left:3px solid var(--yellow);border-radius:12px;padding:13px 16px;margin:14px 0;font-size:14px;background:rgba(255,210,61,.05)}
+  .warn b{color:var(--yellow)}
+  ul{padding-left:20px}li{margin:6px 0}
+  .cb{background:#0c0c14;border:1px solid var(--border);border-radius:10px;margin:10px 0;overflow:hidden}
+  .cb-h{padding:7px 12px;border-bottom:1px solid var(--border);background:var(--panel2);font-size:11.5px;color:var(--muted);font-family:'JetBrains Mono',monospace;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .cb pre{margin:0;padding:11px 13px;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;font-size:12.5px;color:#d7d7e2;font-family:'JetBrains Mono',monospace}
+  .cpy{cursor:pointer;background:#191926;border:1px solid var(--border);color:var(--cyan);border-radius:6px;padding:3px 10px;font-size:11px;font-family:'JetBrains Mono',monospace}
+  .cpy:hover{background:#20203050}.cpy.ok{color:var(--green);border-color:var(--green)}
+  .tier{display:grid;grid-template-columns:1fr;gap:10px;margin:12px 0}
+  .tcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:13px 15px}
+  .tcard b{color:var(--cyan)}
+  footer{margin-top:42px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  @media(min-width:680px){.tier{grid-template-columns:1fr 1fr 1fr}}
+  @media(max-width:640px){.wrap{padding:16px 14px}.go{width:100%;justify-content:center}}
+</style></head>
+<body><div class="wrap">
+  <p class="built">Built 2026-07-01 · Free · MIT</p>
+  <p class="kicker">Start Here</p>
+  <h1>The Super Planner Skill</h1>
+  <p class="sub">One command that turns "build this" into a real plan — sizes the job itself, researches from the right source, locks a checkable goal, then guides Claude Code through build and verification after you approve. Opt-in only. One skill folder to install, no dependencies.</p>
+
+  <h2><span class="num">01</span> Install it (30 seconds)</h2>
+  <p>Copy the skill folder into your Claude Code skills directory. No dependencies, nothing to build.</p>
+  <div class="cb"><div class="cb-h"><span>terminal</span><button class="cpy" data-c="mkdir -p ~/.claude/skills/jd-super-plan &amp;&amp; cp -R skill/jd-super-plan/. ~/.claude/skills/jd-super-plan/">Copy</button></div><pre>mkdir -p ~/.claude/skills/jd-super-plan && cp -R skill/jd-super-plan/. ~/.claude/skills/jd-super-plan/</pre></div>
+  <p class="note"><b>That's it.</b> Claude Code picks up the skill on your next session. It's <code>user-invocable</code> and <code>disable-model-invocation</code>, so it only runs when you call it — it never hijacks a casual question.</p>
+
+  <h2><span class="num">02</span> Run it</h2>
+  <p>In Claude Code, type <code>/jd-super-plan</code> and your idea in plain English:</p>
+  <div class="cb"><div class="cb-h"><span>Claude Code</span><button class="cpy" data-c="/jd-super-plan build a rate limiter for my API">Copy</button></div><pre>/jd-super-plan build a rate limiter for my API</pre></div>
+  <p>It states the tier it picked, runs that tier, pauses at the approval gate, then guides Claude Code through the build and verification after you approve. Run <code>/jd-super-plan</code> with no arguments and it'll ask for the idea in one line.</p>
+
+  <h2><span class="num">03</span> What "sizing the task" means</h2>
+  <p>It classifies the job first, so a tiny change doesn't drown in ceremony and a real build gets the full loop:</p>
+  <div class="tier">
+    <div class="tcard"><b>Tier 1 · Quick</b><br>A small, known change. Straight to a mini-plan, one approval, build, verify. No research, no gates.</div>
+    <div class="tcard"><b>Tier 2 · Standard</b><br>A real feature in a known codebase. Light research + one combined approval gate, then build &amp; verify.</div>
+    <div class="tcard"><b>Tier 3 · Deep</b><br>New project, unfamiliar API, or anything touching auth / payments / third-party data. Full pipeline.</div>
+  </div>
+
+  <div class="warn"><b>A note on accuracy.</b> These docs were checked against Anthropic's Claude Code docs on 2026-07-01. Claude Code commands and skill frontmatter change as Anthropic updates the tool — if a detail looks off against your <code>/help</code>, trust your installed version.</div>
+
+  <h2><span class="num">04</span> Want "done" to be enforced?</h2>
+  <p>This skill makes a strong plan and asks you to verify each success criterion. If you want <b>"done" to be a check that literally exits 0</b> — enforced by a real Stop hook that blocks a fake "done" before the turn can end — that's the deeper, installable kit:</p>
+  <a class="go" href="https://expressive446.gumroad.com/l/biaqgd">→ The Claude Code Setup Playbook</a>
+  <p class="sub">Real hooks + skills you install once. It's what turns "please verify" into "can't finish without verifying."</p>
+
+  <footer>
+    This product is not affiliated with, endorsed by, or sponsored by Anthropic PBC. Claude is a trademark of Anthropic PBC.
+  </footer>
+</div>
+<script>
+  document.querySelectorAll('.cpy').forEach(function(b){
+    b.addEventListener('click',function(){
+      navigator.clipboard.writeText(b.getAttribute('data-c')).then(function(){
+        var t=b.textContent;b.textContent='Copied';b.classList.add('ok');
+        setTimeout(function(){b.textContent=t;b.classList.remove('ok')},1400);
+      });
+    });
+  });
+</script>
+</body></html>

@@ -1,0 +1,15 @@
+The Super Planner Skill for Claude Code
+Version 1.0 · Built 2026-07-01
+
+Contents:
+  skill/jd-super-plan/SKILL.md  — the skill (drop into ~/.claude/skills/)
+  START-HERE.html               — entry point + install walkthrough
+  README.md / README.txt        — docs
+  LICENSE                       — MIT
+
+The skill is a single Markdown file — no dependencies, no runtime. Claude Code
+commands and skill frontmatter change between versions; confirm against /help
+in your version if a detail looks off.
+
+Not affiliated with, endorsed by, or sponsored by Anthropic PBC.
+Claude is a trademark of Anthropic PBC.
