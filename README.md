@@ -63,10 +63,12 @@ These docs were checked against Anthropic's Claude Code docs on 2026-07-01. Clau
 
 This skill makes a *good* plan and tells Claude to verify each success criterion. If you want "done" to be a check that literally exits 0 — enforced by a real Stop hook that blocks a fake "done" before the turn can end — that's a separate, deeper kit: the **[Claude Code Setup Playbook](https://expressive446.gumroad.com/l/biaqgd)** (real hooks + skills you install once).
 
+All my Claude Code tools: [expressive446.gumroad.com](https://expressive446.gumroad.com)
+
 ## License
 
 MIT — use it, fork it, ship it. See [LICENSE](LICENSE).
 
 ---
 
-*This project is not affiliated with, endorsed by, or sponsored by Anthropic PBC. Claude is a trademark of Anthropic PBC.*
+*Claude is a trademark of Anthropic PBC. This project is not affiliated with, endorsed by, or sponsored by Anthropic.*
